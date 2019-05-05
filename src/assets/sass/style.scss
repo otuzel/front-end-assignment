@@ -1,0 +1,332 @@
+@import 'variables.scss';
+@import 'icons.scss';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// CUSTOM STYLES START HERE 
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: $textColor;
+  font-family: 'Lato', sans-serif;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  font-size: 1.5rem;
+  color: #fff;
+  align-content: center;
+  align-items: center;
+  padding: 100px;
+  text-align: center;
+  line-height: 2rem;
+  &.is-active {
+    display: flex;
+  }
+}
+
+h1 { 
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 420px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 750px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+h2 { 
+  font-size: 2rem;
+}
+
+h3 { 
+  font-size: 1.75rem;
+}
+
+[class*=icon-] {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  line-height: 1rem;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+main {
+  flex-grow: 1;
+}
+.container {
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1025px) {
+  .container {
+    width: 1000px;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .container {
+    width: 1080px;
+  }
+}
+header {
+  background-color: $orange;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  display: inline-block;
+  height: 32px;
+  width: 90px;
+}
+.header-title {
+  font-weight: bold;
+  color: #54231a;
+}
+.grid {
+  flex: 1 0 auto;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-areas: 
+    "object-header"
+    "object-media"
+    "object-highlights"
+    "object-map"
+    "object-action"
+}
+
+@media only screen and (min-width: 769px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "object-header object-header"
+    "object-highlights object-highlights"
+    "object-media object-map"
+    "object-action object-action"
+  }
+}
+
+footer {
+  background-color: #ededed;
+  padding: 35px 0;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #666;
+}
+
+.object-header {
+  grid-area: object-header;
+  display: flex;
+  padding: 10px;
+  align-items: flex-end;
+  &__address {
+    margin-bottom: .5rem;
+  }
+  &__address-city {
+    color: $textLightColor;
+    font-size: 1rem;
+    display: block;
+  }
+  &__price {
+    font-size: 1.25rem;
+    margin-left: auto;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .object-header {
+    &__address-city {
+      color: $textLightColor;
+      font-size: 1.25rem;
+      display: block;
+    }
+    &__price {
+      font-size: 2rem;
+      margin-left: auto;
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .object-header {
+    padding: 15px 0;
+  }
+}
+.object-highlights {
+  grid-area: object-highlights;
+  display: flex;
+  flex-direction: column;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  &__list-item {
+    display: flex;
+    flex-direction: row;
+    padding: .875rem .5rem;
+    border-top: 1px solid #ededed;
+    align-items: center;
+  }
+  &__icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 .5rem 0 0;
+  }
+  &__term {
+    position: relative;
+    margin: 0 .5rem 0 0;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .object-highlights {
+    &__list {
+      flex-direction: row;
+    }
+    &__list-item {
+      flex-basis: 20%;
+      flex-grow: 1;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      margin: 0 0 .5rem 0;
+    }
+    &__term {
+      margin: 0 0 .5rem 0;
+    }
+  }
+}
+
+.object-media {
+  grid-area: object-media;
+  &__main-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.object-map {
+  grid-area: object-map;
+  position: relative;
+  min-height: 300px;
+}
+
+.js-data-map {
+  height: 100%;
+}
+
+.object-action {
+  grid-area: object-action;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 478px;
+  border: 0;
+}
+
+.action-button {
+  border-radius: 6px;
+  background-color: $orange;
+  color: #fff;
+  padding: 8px 24px;
+  text-decoration: none;
+}
+

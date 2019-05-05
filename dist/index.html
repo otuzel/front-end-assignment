@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./main.css">
+    <title>Funda - Front-end assignment</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container header-container">
+          <a class="logo" rel="home" href="/" data-component="logo">
+            <img alt="Funda" src="https://assets.fstatic.nl/master_2261/assets/components/logo/fundawonen-logo.svg" onerror="this.onerror = null; this.src = 'https://assets.fstatic.nl/master_2261/assets/components/logo/fundawonen-logo.png'; ">
+          </a>
+          <span class="header-title">
+            compact
+          </span>
+        </div>
+      </header>
+      <main>
+        <div class="container grid">
+          <section class="object-header">
+            <div>
+              <h1 class="object-header__address js-data-address"></h1>
+              <span class="object-header__address-city js-data-postcode"></span>    
+            </div>
+            <div class="object-header__price">
+              € 
+              <span class="js-data-price"></span> 
+              k.k.
+            </div>
+          </section>
+          <section class="object-highlights">
+            <ul class="object-highlights__list">
+              <li class="object-highlights__list-item">
+                <span class="object-highlights__icon icon-building-orange"></span>
+                <span class="object-highlights__term">Bouwjaar</span>
+                <span class="object-highlights__details js-data-year"></span>
+              </li>
+              <li class="object-highlights__list-item">
+                <span class="object-highlights__icon icon-surface-orange"></span>
+                <span class="object-highlights__term">Wonen</span>
+                <span class="object-highlights__details js-data-size"></span>
+              </li>
+              <li class="object-highlights__list-item">
+                <span class="object-highlights__icon icon-door-orange"></span>
+                <span class="object-highlights__term">Aantal kamers</span>
+                <span class="object-highlights__details js-data-rooms"></span>
+              </li>
+              <li class="object-highlights__list-item">
+                <span class="object-highlights__icon icon-cadastral-map-orange"></span>
+                <span class="object-highlights__term">Aangeboden Sinds</span>
+                <span class="object-highlights__details js-data-since"></span>
+              </li>
+              <li class="object-highlights__list-item">
+                <span class="object-highlights__icon icon-energy-blue"></span>
+                <span class="object-highlights__term">Energie Label</span>
+                <span class="object-highlights__details js-data-energy"></span>
+              </li>
+            </ul>
+          </section>
+          <section class="object-media">
+            <div class="js-data-image"></div>
+          </section>
+          <section class="object-map">
+            <div class="js-data-map"></div>
+          </section>
+          <section class="object-action">
+              <a class="action-button" href="">
+                Contact met de makelaar
+              </a>
+          </section>
+        </div>
+        </main>
+        <footer>
+          <div class="container">
+          Some serious stuff
+        </div>
+      </footer>
+    </div>
+    <div id="overlay" class="">
+      <div class="overlay__message js-data-error">
+      </div>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
