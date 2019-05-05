@@ -5,7 +5,8 @@ import style from '../sass/style.scss';
 */
 const page = (function(){
     let pageData = {};
-    const url = '/api/ab932471-75e4-49ed-8716-f7a375b31845';
+    const id = 'ab932471-75e4-49ed-8716-f7a375b31845';
+    const url = '/api/' + id;
     const baseClass = '.js-data-';
 
     /* 
