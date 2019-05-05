@@ -18,7 +18,9 @@ SECRET = 'ENTER YOUR SECRET';
 ```
 
 ### Usage
-Run this inside your project folder
+1. Run this inside your project folder
 ```sh
 npm start
 ```
+
+2. Go to `localhost:5000` (or any port you set in `server.js`)
