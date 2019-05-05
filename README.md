@@ -17,7 +17,7 @@ npm install
 SECRET = 'ENTER YOUR SECRET';
 ```
 
-### Installation
+### Usage
 Run this inside your project folder
 ```sh
 npm start
