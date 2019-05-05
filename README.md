@@ -25,4 +25,5 @@ npm start
 
 2. Go to `localhost:5000` (or any port you set in `server.js`)
 
-Note: You can change object id in `src/assets/js/index.js` file
+
+Note: You can set object id in `src/assets/js/index.js` file
