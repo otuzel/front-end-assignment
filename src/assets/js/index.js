@@ -1,6 +1,6 @@
 import style from '../sass/style.scss';
 
-/* 
+/*
 * Page module, to be instantiated only once
 */
 const page = (function(){
@@ -9,7 +9,7 @@ const page = (function(){
     const url = '/api/' + id;
     const baseClass = '.js-data-';
 
-    /* 
+    /*
     * The list of nodes to be filled
     * Used for mapping css classes to data object properties
     * Example: .js-data-address -> pageData.Adres
@@ -50,19 +50,21 @@ const page = (function(){
     };
 
     /*
-    * init() sets the pageData by the api response 
+    * init() sets the pageData by the api response
     */
     const init = async function () {
+      showLoader();
       try {
         const pageData = await fetchData();
         generatePage(pageData);
       } catch (error) {
-        const errorMessage = `${error}. Please check your secret key (.env file) or object id`
+        const errorMessage = `${error}. Please check your secret key (.env file) or object id`;
+        hideLoader();
         generateError(errorMessage);
         throw new Error(errorMessage);
       }
     }
-    
+
     /*
     * fetchData() does the call to the api
     * and returns a promise
@@ -85,6 +87,7 @@ const page = (function(){
         createObjectMap
       ]
       funcs.forEach((f) => f(data));
+      hideLoader();
     }
 
     /*
@@ -124,7 +127,23 @@ const page = (function(){
     */
     const generateError = function(message) {
       document.getElementById('overlay').classList.add("is-active");
-      selectEl('error').innerHTML = message;
+      document.getElementById('overlay').innerHTML = `<div class="overlay__message">${message}</div>`;
+    }
+
+    /*
+     * showLoader() Displays loader
+     */
+    const showLoader = function () {
+      document.getElementById('overlay').classList.add("is-active");
+      document.getElementById('overlay').innerHTML = '<div id="loader"></div>';
+    }
+
+    /*
+     * hideLoader() Hides loader
+     */
+    const hideLoader = function () {
+      document.getElementById('overlay').classList.remove("is-active");
+      document.getElementById('loader').remove();
     }
     /*
     * createObjectMap() is a helper for selecting
@@ -138,7 +157,7 @@ const page = (function(){
     * createObjectMap() is a helper for resolving value when a property name is given
     * @param {String} path property name such as 'Adres' or nested ones 'Energielabel.Label'
     * @param {Object} obj The data object
-    * @param {String} seperator 
+    * @param {String} seperator
     */
     const resolve = function (path, obj=self, separator='.') {
       var properties = Array.isArray(path) ? path : path.split(separator)
@@ -151,5 +170,5 @@ const page = (function(){
       init: init
     }
   })()
-  
+
   page.init();

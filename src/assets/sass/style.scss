@@ -1,8 +1,9 @@
 @import 'variables.scss';
 @import 'icons.scss';
+@import 'loader.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -16,8 +17,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -29,7 +30,7 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -61,7 +62,7 @@ table {
   box-sizing: border-box;
 }
 
-// CUSTOM STYLES START HERE 
+// CUSTOM STYLES START HERE
 
 html, body {
   height: 100%;
@@ -72,30 +73,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0; 
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  font-size: 1.5rem;
-  color: #fff;
-  align-content: center;
-  align-items: center;
-  padding: 100px;
-  text-align: center;
-  line-height: 2rem;
-  &.is-active {
-    display: flex;
-  }
-}
-
-h1 { 
+h1 {
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -111,11 +89,11 @@ h1 {
   }
 }
 
-h2 { 
+h2 {
   font-size: 2rem;
 }
 
-h3 { 
+h3 {
   font-size: 1.75rem;
 }
 
@@ -172,7 +150,7 @@ header {
   flex: 1 0 auto;
   display: grid;
   grid-gap: 2px;
-  grid-template-areas: 
+  grid-template-areas:
     "object-header"
     "object-media"
     "object-highlights"
@@ -183,7 +161,7 @@ header {
 @media only screen and (min-width: 769px) {
   .grid {
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
     "object-header object-header"
     "object-highlights object-highlights"
     "object-media object-map"
@@ -232,11 +210,13 @@ footer {
     }
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .object-header {
     padding: 15px 0;
   }
 }
+
 .object-highlights {
   grid-area: object-highlights;
   display: flex;
@@ -329,4 +309,3 @@ footer {
   padding: 8px 24px;
   text-decoration: none;
 }
-
